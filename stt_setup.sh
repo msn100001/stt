@@ -59,8 +59,10 @@ if [ ! -d "$MODEL_DIR" ]; then
 
     if [ $? -eq 0 ]; then
         echo "Vosk model downloaded successfully. Extracting..."
+        mkdir -p $MODEL_DIR
         unzip model.zip -d $MODEL_DIR
-        rm model.zip
+        mv $MODEL_DIR/vosk-model-small-en-us-*/* $MODEL_DIR/
+        rm -r $MODEL_DIR/vosk-model-small-en-us-* model.zip
         echo "Vosk model extracted to $MODEL_DIR."
     else
         echo "Failed to download Vosk model. Exiting."
