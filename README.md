@@ -76,22 +76,6 @@ source venv/bin/activate
 - **Vosk Model Download Failed:**
    Ensure you have an active internet connection when running the setup script.
 
-## Contributing
-1. Fork the repository.
-2. Create a feature branch:
-   ```bash
-   git checkout -b feature-name
-   ```
-3. Commit your changes:
-   ```bash
-   git commit -m "Add new feature"
-   ```
-4. Push your branch:
-   ```bash
-   git push origin feature-name
-   ```
-5. Submit a pull request.
-
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
