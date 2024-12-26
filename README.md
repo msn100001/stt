@@ -5,7 +5,6 @@ This is a real-time speech-to-text application that uses Python to transcribe sp
 
 ## Features
 - **Real-Time Speech Recognition:** Converts speech into text instantly.
-- **Numerical Formatting:** Automatically formats numbers appropriately (e.g., "one hundred fifty thousand" to "150,000").
 - **Predictive Text Normalization:** Corrects common misspellings and enhances transcription quality.
 - **Customizable Number Output:** Toggle between displaying numbers as words or numerals.
 - **Keyword Recognition:** Highlights specific words like "taxed" in the output.
