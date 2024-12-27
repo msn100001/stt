@@ -1,86 +1,144 @@
-# Speech-to-Text Application
 
-## Overview
-This is a real-time speech-to-text application that uses Python to transcribe spoken words into text. The application leverages the Vosk library for speech recognition and PyQt6 for its graphical user interface (GUI). This project is designed to support live transcription with features like number formatting and predictive text normalization.
+# Speech-to-Text Application (stt)
+
+A real-time speech-to-text application that uses the Vosk speech recognition library and PyQt6 for an interactive graphical user interface. This project supports multiple languages, including English, French, and Spanish, and allows real-time transcription with customizable options.
+
+---
 
 ## Features
-- **Real-Time Speech Recognition:** Converts speech into text instantly.
-- **Predictive Text Normalization:** Corrects common misspellings and enhances transcription quality.
-- **Customizable Number Output:** Toggle between displaying numbers as words or numerals.
-- **Keyword Recognition:** Highlights specific words like "taxed" in the output.
-- **Interactive GUI:** Simple and intuitive interface built with PyQt6.
 
-## Requirements
-### System Requirements
-- Python 3.6+
-- Internet connection (for initial setup)
-- Microphone
+- **Real-Time Speech Recognition**:
+  - Transcribes audio input into text with minimal delay.
+- **Multi-Language Support**:
+  - Recognizes speech in English, French, and Spanish.
+- **Intuitive GUI**:
+  - User-friendly interface built with PyQt6.
+- **Partial and Full Transcription**:
+  - Displays partial transcription results in real-time.
+- **Keyword Highlighting**:
+  - Detects specific keywords (e.g., "taxed") and highlights them.
+- **Language Selection**:
+  - Easily switch between supported languages.
+- **Text Management**:
+  - Clear transcriptions with a single button.
 
-### Python Dependencies
-- `vosk`
-- `pyaudio`
-- `PyQt6`
+---
+
+## Prerequisites
+
+- **Python**:
+  - Python 3.8 or later is required.
+- **Dependencies**:
+  - `vosk`, `pyaudio`, and `PyQt6`.
+- **Vosk Language Models**:
+  - Pre-trained models for English, French, and Spanish.
+
+---
 
 ## Installation
 
-### Clone the Repository
-```bash
-git clone git@github.com:msn100001/stt.git
-cd stt
-```
+1. **Clone the Repository**:
+   ```bash
+   git clone git@github.com:msn100001/stt.git
+   cd stt
+   ```
 
-### Run the Setup Script
-Use the provided setup script to automate the environment setup:
-```bash
-chmod +x stt_setup.sh
-./stt_setup.sh
-```
-The script will:
-1. Create a Python virtual environment.
-2. Install the required Python dependencies.
-3. Download and extract the Vosk model for speech recognition.
-4. Generate a `requirements.txt` file for tracking dependencies.
+2. **Run the Setup Script**:
+   ```bash
+   ./stt_setup.sh
+   ```
 
-### Activate the Virtual Environment
-```bash
-source venv/bin/activate
-```
+3. **Choose Language Models**:
+   - During the setup, select the desired languages (English, French, Spanish, or all).
+   - Models are downloaded and placed in their respective directories (`model_en`, `model_fr`, `model_es`).
 
-## Usage
-### Run the Application
-1. Ensure the virtual environment is active:
+4. **Activate the Virtual Environment**:
    ```bash
    source venv/bin/activate
    ```
-2. Start the application:
+
+---
+
+## Usage
+
+### Starting the Application
+1. Ensure the virtual environment is activated:
+   ```bash
+   source venv/bin/activate
+   ```
+
+2. Run the application:
    ```bash
    python3 stt.py
    ```
 
-### Application Features
-- **Start Listening:** Begin live transcription.
-- **Stop Listening:** Halt the transcription process.
-- **Clear Text:** Clear all transcribed text from the interface.
-- **Toggle Numbers Format:** Switch between displaying numbers as numerals or words.
+### Features in the GUI
+- **Start Listening**:
+  - Begin transcription by clicking "🎙 Start Listening."
+- **Stop Listening**:
+  - Stop the transcription process with "🛑 Stop Listening."
+- **Clear Text**:
+  - Use "🧹 Clear Text" to clear the transcriptions.
+- **Language Selection**:
+  - Choose the desired language from the dropdown menu before starting.
+
+---
+
+## Directory Structure
+
+```
+stt/
+├── model_en/           # English Vosk model
+├── model_fr/           # French Vosk model
+├── model_es/           # Spanish Vosk model
+├── stt.py              # Main application script
+├── stt_setup.sh        # Setup script
+├── requirements.txt    # Python dependencies
+└── README.md           # Documentation
+```
+
+---
 
 ## Troubleshooting
-- **PyAudio Installation Issues:**
-   If you encounter errors with `pyaudio`, ensure you have the required development libraries:
-   ```bash
-   sudo apt-get install portaudio19-dev
-   ```
-- **Microphone Access Issues:**
-   - Ensure the microphone is enabled and accessible by Python.
-   - Test microphone functionality with other programs.
-- **Vosk Model Download Failed:**
-   Ensure you have an active internet connection when running the setup script.
+
+### Common Issues
+- **Audio Input Errors**:
+  - Ensure your microphone is not in use by another application.
+  - Check audio device permissions.
+
+- **Model Not Found**:
+  - Ensure that the language models are correctly placed in `model_en`, `model_fr`, and `model_es`.
+
+- **ALSA or Jack Errors**:
+  - Install `pulseaudio` to resolve sound system conflicts:
+    ```bash
+    sudo apt install pulseaudio
+    ```
+
+### Debugging
+- Activate the virtual environment and re-run the setup script if issues persist:
+  ```bash
+  source venv/bin/activate
+  ./stt_setup.sh
+  ```
+
+---
 
 ## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+---
+
+## Contributions
+
+Contributions are welcome! Feel free to fork the repository and submit a pull request.
+
+---
 
 ## Acknowledgments
-- [Vosk](https://alphacephei.com/vosk/) for the speech recognition library.
-- [PyQt6](https://www.riverbankcomputing.com/software/pyqt/intro) for the GUI framework.
 
-## Contact
-For questions or support, open an issue on the [GitHub repository](https://github.com/msn100001/stt/issues).
+- **Vosk**:
+  - [Vosk Speech Recognition Toolkit](https://alphacephei.com/vosk/)
+- **PyQt6**:
+  - [PyQt6 Documentation](https://www.riverbankcomputing.com/software/pyqt/intro)
